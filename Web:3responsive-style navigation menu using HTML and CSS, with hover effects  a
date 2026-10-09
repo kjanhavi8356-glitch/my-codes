@@ -1,0 +1,142 @@
+3.Create a Navigation Menu Using HTML and CSS
+Aim : To create a responsive-style navigation menu using HTML and CSS, with hover effects 
+a
+
+
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+ content="width=device-width, initial-scale=1.0">
+ <title>Navigation Menu</title>
+ <style>
+ /* Reset default styling */
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ /* Page */
+ body {
+ font-family: Arial, sans-serif;
+ background-color: #f2f2f2;
+ }
+ /* Navigation Bar */
+ nav {
+ background-color: #1e293b;
+ padding: 0 30px;
+ }
+ /* Main Menu */
+ .menu {
+ list-style: none;
+ display: flex;
+ justify-content: center;
+ }
+ .menu > li {
+ position: relative;
+}
+menu > li > a {
+ display: block;
+ color: white;
+ text-decoration: none;
+ padding: 18px 25px;
+ font-size: 17px;
+ }
+ /* Hover Effect */
+ .menu > li > a:hover {
+ background-color: #2563eb;
+ }
+ /* Dropdown Menu */
+ .dropdown {
+ display: none;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ min-width: 180px;
+ background-color: #1e293b;
+ list-style: none;
+ z-index: 1000;
+ }
+ .dropdown li a {
+ display: block;
+ color: white;
+ text-decoration: none;
+ padding: 12px 18px;
+ }
+ .dropdown li a:hover {
+ background-color: #2563eb;
+ }
+ /* Show Dropdown on Hover */
+ .menu li:hover .dropdown {
+ display: block;
+ }
+ /* Page Content */
+ .content {
+ text-align: center;
+ padding: 80px 20px;
+}
+content h1 {
+ color: #1e293b;
+ margin-bottom: 15px;
+ }
+ .content p {
+ color: #555;
+ font-size: 18px;
+ }
+ /* Mobile Layout */
+ @media (max-width: 600px) {
+ .menu {
+ flex-direction: column;
+ text-align: center;
+ }
+ .dropdown {
+ position: static;
+ width: 100%;
+ }
+ .menu li:hover .dropdown {
+ display: block;
+ }
+ }
+ </style>
+</head>
+<body>
+ <!-- Navigation Menu -->
+ <nav>
+ <ul class="menu">
+ <li>
+ <a href="#">Home</a>
+ </li>
+ <li>
+ <a href="#">About</a>
+</li>
+<li>
+ <a href="#">Courses ▾</a>
+ <ul class="dropdown">
+ <li>
+ <a href="#">Web Development</a>
+ </li>
+ <li>
+ <a href="#">Python</a>
+ </li>
+ <li>
+ <a href="#">Machine Learning</a>
+ </li>
+ </ul>
+ </li>
+ <li>
+ <a href="#">Services</a>
+ </li>
+ <li>
+ <a href="#">Contact</a>
+ </li>
+ </ul>
+ </nav>
+ <!-- Main Content -->
+ <div class="content">
+ <h1>Welcome to My Website</h1>
+ <p>
+ Use the navigation menu above to explore the website.
+ </p>
+ </div>
+</body>
+</html>

@@ -1,69 +1,233 @@
 no.3: To design and style a webpage using both  CSS and External CSS.
 Internal
 
-<html>
+ HTML File — index.html
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>My Webpage</title>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+ content="width=device-width, initial-scale=1.0">
+ <title>Navigation Menu</title>
+ <style>
+ /* Reset default styling */
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ /* Page */
+ body {
+ font-family: Arial, sans-serif;
+ background-color: #f2f2f2;
+ }
+ /* Navigation Bar */
+ nav {
+ background-color: #1e293b;
+ padding: 0 30px;
+ }
+ /* Main Menu */
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Internal CSS -->
-    <style>
-        h1 {
-            color: darkblue;
-            text-align: center;
-        }
-
-        .intro {
-            color: darkgreen;
-            font-size: 18px;
-            text-align: center;
-        }
-    </style>
+.menu {
+ list-style: none;
+ display: flex;
+ justify-content: center;
+ }
+ .menu > li {
+ position: relative;
+ }
+ .menu > li > a {
+ display: block;
+ color: white;
+ text-decoration: none;
+ padding: 18px 25px;
+ font-size: 17px;
+ }
+ /* Hover Effect */
+ .menu > li > a:hover {
+ background-color: #2563eb;
+ }
+ /* Dropdown Menu */
+ .dropdown {
+ display: none;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ min-width: 180px;
+ background-color: #1e293b;
+ list-style: none;
+ z-index: 1000;
+ }
+ .dropdown li a {
+ display: block;
+ color: white;
+ text-decoration: none;
+ padding: 12px 18px;
+ }
+ .dropdown li a:hover {
+ background-color: #2563eb;
+ }
+ /* Show Dropdown on Hover */
+.menu li:hover .dropdown {
+ display: block;
+ }
+ /* Page Content */
+ .content {
+ text-align: center;
+ padding: 80px 20px;
+ }
+ .content h1 {
+ color: #1e293b;
+ margin-bottom: 15px;
+ }
+ .content p {
+ color: #555;
+ font-size: 18px;
+ }
+ /* Mobile Layout */
+ @media (max-width: 600px) {
+ .menu {
+ flex-direction: column;
+ text-align: center;
+ }
+ .dropdown {
+ position: static;
+ width: 100%;
+ }
+ .menu li:hover .dropdown {
+ display: block;
+ }
+ }
+ </style>
 </head>
-
 <body>
-
-    <header>
-        <h1>Welcome to My Website</h1>
-        <p class="intro">This is a simple webpage using CSS.</p>
-    </header>
-
-    <div class="box">
-        <h2>About Us</h2>
-        <p>
-            We create simple and attractive webpages using HTML and CSS.
-        </p>
-        <button>Learn More</button>
-    </div>
-
-    <footer>
-        <p>© 2026 My Website</p>
-    </footer>
-
+ <!-- Navigation Menu -->
+<nav>
+<ul class="menu">
+ <li>
+ <a href="#">Home</a>
+ </li>
+ <li>
+ <a href="#">About</a>
+ </li>
+ <li>
+ <a href="#">Courses ▾</a>
+ <ul class="dropdown">
+ <li>
+ <a href="#">Web Development</a>
+ </li>
+ <li>
+ <a href="#">Python</a>
+ </li>
+ <li>
+ <a href="#">Machine Learning</a>
+ </li>
+ </ul>
+ </li>
+ <li>
+ <a href="#">Services</a>
+ </li>
+ <li>
+ <a href="#">Contact</a>
+ </li>
+ </ul>
+ </nav>
+ <!-- Main Content -->
+ <div class="content">
+<h1>Welcome to My Website</h1>
+ <p>
+ Use the navigation menu above to explore the website.
+ </p>
+ </div>
 </body>
-</html>  
-
-
-2. s1.css
-
+</html>
+ 
+2. Styles.css
 /* --------------------------------------------------
-   External CSS File
-   -------------------------------------------------- */
-
-
+ External CSS File
+ -------------------------------------------------- */
+/* General Page Styling */
 body {
-    background-color: pink;
-    font-family: Arial, sans-serif;
-    text-align: center;
+ margin: 0;
+ padding: 0;
+ font-family: Arial, sans-serif;
+ background-color: #f2f6fa;
+ color: #222;
+}
+/* Header */
+header {
+ background-color: #2563eb;
+ color: white;
+ text-align: center;
+ padding: 30px;
+}
+header h1 {
+ margin: 0;
+ font-size: 36px;
+}
+header p {
+ font-size: 18px;
+}
+/* Navigation Bar */
+nav {
+ background-color: #1e293b;
+ text-align: center;
+ padding: 15px;
+}
+nav a {
+ color: white;
+ text-decoration: none;
+ margin: 0 20px;
+ font-size: 17px;
+}
+nav a:hover {
+ color: #60a5fa;
+}
+/* Main Content */
+main {
+ width: 80%;
+ margin: 30px auto;
+}
+/* Cards */
+card {
+ background-color: white;
+ padding: 25px;
+ margin-bottom: 20px;
+ border-radius: 10px;
+ box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+.card h2 {
+ color: #2563eb;
+ border-bottom: 2px solid #2563eb;
+ padding-bottom: 8px;
+}
+/* List */
+.card li {
+ padding: 8px;
+ font-size: 17px;
+}
+/* Skills */
+.skills {
+ display: flex;
+ gap: 15px;
+ flex-wrap: wrap;
+}
+.skills span {
+ background-color: #2563eb;
+ color: white;
+ padding: 10px 20px;
+border-radius: 20px;
+}
+/* Footer */
+footer {
+ background-color: #1e293b;
+ color: white;
+ text-align: center;
+ padding: 20px;
+ margin-top: 30px;
 }
 
-button {
-    background-color: red;
-    color: green;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-}
+
+
+
 
